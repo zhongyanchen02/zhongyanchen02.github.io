@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZhongYan Chen · 个人主页</title>
+<meta name="description" content="ZhongYan Chen 的个人学术主页：研究方向、论文发表、项目与联系方式。">
+<meta property="og:title" content="ZhongYan Chen · 个人主页">
+<meta property="og:description" content="个人学术主页：研究方向、论文发表、项目与联系方式。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhongyanchen02.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f4c81'/%3E%3Ctext x='32' y='43' font-family='Segoe UI,Arial' font-size='30' font-weight='600' fill='%23fff' text-anchor='middle'%3EZC%3C/text%3E%3C/svg%3E">
+<script>
+  try {
+    var saved = localStorage.getItem('theme');
+    document.documentElement.dataset.theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch (e) {}
+</script>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f6f8fb;
+    --surface: #ffffff;
+    --border: #e3e8ef;
+    --text: #1b2430;
+    --text-soft: #5a6675;
+    --accent: #0f4c81;
+    --accent-soft: #e9f1f9;
+    --shadow: 0 1px 2px rgba(16,24,40,.04), 0 10px 28px rgba(16,24,40,.06);
+    --radius: 14px;
+    --maxw: 1000px;
+  }
+  html[data-theme="dark"] {
+    --bg: #0d1117;
+    --bg-soft: #111823;
+    --surface: #151d28;
+    --border: #243040;
+    --text: #e6edf3;
+    --text-soft: #9aa7b6;
+    --accent: #6aa9e0;
+    --accent-soft: #16283a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.35);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1, h2, h3 { line-height: 1.3; margin: 0; font-weight: 650; letter-spacing: -0.01em; }
+  p { margin: 0 0 1em; }
+  section { scroll-margin-top: 84px; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+  /* ---------- 顶栏 ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar { display: flex; align-items: center; gap: 16px; height: 62px; }
+  .brand { font-weight: 700; font-size: 15px; letter-spacing: .02em; white-space: nowrap; color: var(--text); }
+  nav { display: flex; gap: 22px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { color: var(--text-soft); font-size: 14.5px; white-space: nowrap; padding: 4px 0; }
+  nav a:hover { color: var(--accent); text-decoration: none; }
+  .tools { display: flex; gap: 8px; flex: 0 0 auto; }
+  .chip {
+    appearance: none; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-soft);
+    border-radius: 999px; height: 32px; padding: 0 13px;
+    font: inherit; font-size: 13px; line-height: 1;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .chip:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- 首屏 ---------- */
+  .hero {
+    background:
+      radial-gradient(900px 380px at 12% -10%, var(--accent-soft), transparent 70%),
+      var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+    padding: 68px 0 58px;
+  }
+  .hero-grid { display: flex; align-items: center; gap: 44px; }
+  .hero h1 { font-size: clamp(30px, 5vw, 44px); }
+  .hero .cn-name { font-size: 17px; color: var(--text-soft); font-weight: 500; margin-top: 6px; }
+  .role { margin-top: 16px; font-size: 17px; color: var(--text); font-weight: 500; }
+  .affil { color: var(--text-soft); font-size: 15.5px; }
+  .tagline { margin-top: 18px; max-width: 46ch; color: var(--text-soft); }
+  .links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    height: 38px; padding: 0 16px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    font-size: 14.5px; box-shadow: var(--shadow);
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  html[data-theme="dark"] .btn.primary { color: #0d1117; }
+  .btn.primary:hover { color: #fff; opacity: .92; }
+  html[data-theme="dark"] .btn.primary:hover { color: #0d1117; }
+
+  /* 头像：替换成照片见下方注释 */
+  .avatar {
+    flex: 0 0 auto;
+    width: 168px; height: 168px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: linear-gradient(140deg, var(--accent), color-mix(in srgb, var(--accent) 60%, #6ad0c0));
+    color: #fff; font-size: 54px; font-weight: 650; letter-spacing: .02em;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+  }
+
+  /* ---------- 通用区块 ---------- */
+  .section { padding: 58px 0; border-bottom: 1px solid var(--border); }
+  .section:last-of-type { border-bottom: 0; }
+  .section h2 { font-size: 22px; margin-bottom: 6px; }
+  .section h2 .en { color: var(--text-soft); font-weight: 500; font-size: 14px; margin-left: 8px; letter-spacing: .04em; text-transform: uppercase; }
+  .lead { color: var(--text-soft); margin: 14px 0 0; }
+  .prose { margin-top: 18px; max-width: 72ch; }
+
+  /* 研究方向 */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 16px; margin-top: 24px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px 20px 16px; box-shadow: var(--shadow);
+  }
+  .card h3 { font-size: 16px; margin-bottom: 7px; }
+  .card p { color: var(--text-soft); font-size: 14.5px; margin: 0; }
+
+  /* 动态 */
+  .news { list-style: none; padding: 0; margin: 22px 0 0; }
+  .news li { display: flex; gap: 16px; padding: 9px 0; border-bottom: 1px dashed var(--border); font-size: 15px; }
+  .news li:last-child { border-bottom: 0; }
+  .news .date { flex: 0 0 78px; color: var(--text-soft); font-variant-numeric: tabular-nums; font-size: 14px; }
+
+  /* 论文 */
+  .pubs { list-style: none; padding: 0; margin: 24px 0 0; }
+  .pubs li { position: relative; padding: 0 0 18px 20px; border-left: 2px solid var(--border); }
+  .pubs li::before {
+    content: ""; position: absolute; left: -6px; top: 10px;
+    width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .pubs li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .pub-title { font-weight: 600; }
+  .pub-meta { color: var(--text-soft); font-size: 14.5px; }
+  .pub-links { margin-top: 5px; font-size: 14px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .badge {
+    display: inline-block; margin-left: 8px; padding: 1px 9px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); font-size: 12.5px; font-weight: 600;
+    vertical-align: 2px;
+  }
+
+  /* 两栏 */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 24px; }
+  .cols h3 { font-size: 15px; color: var(--text-soft); letter-spacing: .04em; text-transform: uppercase; margin-bottom: 12px; }
+  .timeline { list-style: none; padding: 0; margin: 0; }
+  .timeline li { padding: 0 0 16px; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline .when { color: var(--text-soft); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .timeline .what { font-weight: 560; }
+  .timeline .where { color: var(--text-soft); font-size: 14.5px; }
+
+  /* 联系方式 */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 24px; }
+  .contact-item { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 16px 18px; }
+  .contact-item .k { font-size: 13px; color: var(--text-soft); letter-spacing: .04em; text-transform: uppercase; }
+  .contact-item .v { margin-top: 4px; font-size: 15px; word-break: break-all; }
+
+  footer { padding: 30px 0 44px; color: var(--text-soft); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+  footer .spacer { margin-left: auto; }
+
+  @media (max-width: 760px) {
+    .bar {
+      height: auto; min-height: 0; flex-wrap: wrap;
+      padding: 11px 0 0; gap: 8px 12px;
+    }
+    .brand { order: 1; }
+    .tools { order: 2; margin-left: auto; }
+    nav {
+      order: 3; flex-basis: 100%; margin-left: 0;
+      gap: 20px; padding-bottom: 11px;
+    }
+    .hero { padding: 40px 0 36px; }
+    .hero-grid { flex-direction: column-reverse; align-items: flex-start; gap: 26px; }
+    .avatar { width: 118px; height: 118px; font-size: 38px; }
+    .section { padding: 44px 0; }
+    .cols { grid-template-columns: 1fr; gap: 26px; }
+    .card { padding: 18px 18px 14px; }
+    footer .spacer { display: none; }
+  }
+  @media print {
+    header, .tools, .links { display: none; }
+    body { font-size: 12pt; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">ZhongYan Chen</a>
+    <nav>
+      <a href="#about"   data-i18n-zh="关于我"   data-i18n-en="About">关于我</a>
+      <a href="#research" data-i18n-zh="研究方向" data-i18n-en="Research">研究方向</a>
+      <a href="#news"    data-i18n-zh="最新动态" data-i18n-en="News">最新动态</a>
+      <a href="#pubs"    data-i18n-zh="论文发表" data-i18n-en="Publications">论文发表</a>
+      <a href="#cv"      data-i18n-zh="教育与经历" data-i18n-en="Experience">教育与经历</a>
+      <a href="#contact" data-i18n-zh="联系方式" data-i18n-en="Contact">联系方式</a>
+    </nav>
+    <div class="tools">
+      <button class="chip" id="langBtn" type="button" aria-label="切换语言">EN</button>
+      <button class="chip" id="themeBtn" type="button" aria-label="切换深色模式">◐</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= 首屏 ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>ZhongYan Chen</h1>
+        <div class="cn-name" data-i18n-zh="（你的中文姓名）" data-i18n-en="(Chinese name)">（你的中文姓名）</div>
+
+        <p class="role" data-i18n-zh="博士研究生 · （你的专业方向）"
+           data-i18n-en="Ph.D. Student · (Your field)">博士研究生 · （你的专业方向）</p>
+        <p class="affil" data-i18n-zh="（你的学校 / 学院 / 实验室）"
+           data-i18n-en="(Your University / School / Lab)">（你的学校 / 学院 / 实验室）</p>
+
+        <p class="tagline"
+           data-i18n-zh="一句话介绍你自己：关注什么方向、解决什么问题、目前在做哪些工作。"
+           data-i18n-en="One sentence about you: what you work on, which problems you solve, and what you are building now.">
+          一句话介绍你自己：关注什么方向、解决什么问题、目前在做哪些工作。
+        </p>
+
+        <div class="links">
+          <a class="btn primary" href="mailto:your-email@example.com" data-i18n-zh="✉ 邮箱" data-i18n-en="✉ Email">✉ 邮箱</a>
+          <a class="btn" href="files/cv.pdf" data-i18n-zh="下载简历" data-i18n-en="CV (PDF)">下载简历</a>
+          <a class="btn" href="https://github.com/zhongyanchen02" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+        </div>
+      </div>
+
+      <!-- 想换成真实照片：删掉下面这个 div，换成
+           <img class="avatar" src="avatar.jpg" alt="ZhongYan Chen">
+           再把 avatar.jpg 上传到仓库根目录即可。 -->
+      <div class="avatar" aria-hidden="true">ZC</div>
+    </div>
+  </section>
+
+  <!-- ================= 关于我 ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2><span data-i18n-zh="关于我" data-i18n-en="About">关于我</span><span class="en" data-i18n-zh="About" data-i18n-en="关于我">About</span></h2>
+      <div class="prose">
+        <p data-i18n-zh="我目前是（学校）（院系）的（学位/职位），师从（导师姓名）教授，主要研究（方向一）与（方向二）。"
+           data-i18n-en="I am currently a (degree/position) at (School, University), advised by Prof. (Advisor). My research focuses on (topic one) and (topic two).">
+          我目前是（学校）（院系）的（学位/职位），师从（导师姓名）教授，主要研究（方向一）与（方向二）。
+        </p>
+        <p data-i18n-zh="在此之前，我于（年份）在（本科学校）获得（专业）学士学位。我的研究兴趣包括（关键词一）、（关键词二）和（关键词三）。"
+           data-i18n-en="Before that, I received my B.S. in (Major) from (University) in (Year). My research interests include (keyword one), (keyword two), and (keyword three).">
+          在此之前，我于（年份）在（本科学校）获得（专业）学士学位。我的研究兴趣包括（关键词一）、（关键词二）和（关键词三）。
+        </p>
+        <p data-i18n-zh="欢迎通过邮件与我交流合作，也欢迎对相关方向感兴趣的同学联系。"
+           data-i18n-en="I am always happy to discuss research and collaboration. Feel free to reach out by email.">
+          欢迎通过邮件与我交流合作，也欢迎对相关方向感兴趣的同学联系。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 研究方向 ================= -->
+  <section class="section" id="research">
+    <div class="wrap">
+      <h2><span data-i18n-zh="研究方向" data-i18n-en="Research">研究方向</span><span class="en" data-i18n-zh="Research" data-i18n-en="研究方向">Research</span></h2>
+      <div class="cards">
+        <div class="card">
+          <h3 data-i18n-zh="方向一：填写你的主要方向" data-i18n-en="Topic 1: your main area">方向一：填写你的主要方向</h3>
+          <p data-i18n-zh="用两三句话说明这个方向解决什么问题、你做了哪些具体工作。"
+             data-i18n-en="Two or three sentences on the problem this direction addresses and your specific contribution.">用两三句话说明这个方向解决什么问题、你做了哪些具体工作。</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n-zh="方向二" data-i18n-en="Topic 2">方向二</h3>
+          <p data-i18n-zh="同上，简要描述研究内容与代表性成果。"
+             data-i18n-en="Same as above: brief description of the work and representative results.">同上，简要描述研究内容与代表性成果。</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n-zh="方向三" data-i18n-en="Topic 3">方向三</h3>
+          <p data-i18n-zh="同上。如果只有两个方向，直接删掉这一张卡片即可。"
+             data-i18n-en="Same as above. If you only have two topics, simply delete this card.">同上。如果只有两个方向，直接删掉这一张卡片即可。</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n-zh="方向四" data-i18n-en="Topic 4">方向四</h3>
+          <p data-i18n-zh="同上。留着空的话可以删掉。"
+             data-i18n-en="Same as above; delete if unused.">同上。留着空的话可以删掉。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 最新动态 ================= -->
+  <section class="section" id="news">
+    <div class="wrap">
+      <h2><span data-i18n-zh="最新动态" data-i18n-en="News">最新动态</span><span class="en" data-i18n-zh="News" data-i18n-en="最新动态">News</span></h2>
+      <ul class="news">
+        <li>
+          <span class="date">2026.03</span>
+          <span data-i18n-zh="论文《（论文标题）》被（期刊/会议）接收。" data-i18n-en="Our paper “(Title)” was accepted at (Venue).">论文《（论文标题）》被（期刊/会议）接收。</span>
+        </li>
+        <li>
+          <span class="date">2025.11</span>
+          <span data-i18n-zh="在（会议名称）作口头报告。" data-i18n-en="Gave an oral presentation at (Conference).">在（会议名称）作口头报告。</span>
+        </li>
+        <li>
+          <span class="date">2025.06</span>
+          <span data-i18n-zh="获得（奖项/奖学金名称）。" data-i18n-en="Received (Award / Scholarship).">获得（奖项/奖学金名称）。</span>
+        </li>
+      </ul>
+      <p class="lead" data-i18n-zh="不需要动态板块的话，把这一整段 section 删掉即可。"
+         data-i18n-en="If you do not need a news section, delete this whole section.">不需要动态板块的话，把这一整段 section 删掉即可。</p>
+    </div>
+  </section>
+
+  <!-- ================= 论文发表 ================= -->
+  <section class="section" id="pubs">
+    <div class="wrap">
+      <h2><span data-i18n-zh="论文发表" data-i18n-en="Publications">论文发表</span><span class="en" data-i18n-zh="Publications" data-i18n-en="论文发表">Publications</span></h2>
+      <p class="lead" data-i18n-zh="完整列表见 Google Scholar。（把这条改成你自己的链接即可）"
+         data-i18n-en="See Google Scholar for the full list.">完整列表见 Google Scholar。（把这条改成你自己的链接即可）</p>
+
+      <ul class="pubs">
+        <li>
+          <div class="pub-title">ZhongYan Chen, et al. “（论文标题一）.” <span class="badge" data-i18n-zh="第一作者" data-i18n-en="First author">第一作者</span></div>
+          <div class="pub-meta">（期刊 / 会议名称）, 2026.</div>
+          <div class="pub-links">
+            <a href="#" data-i18n-zh="论文链接" data-i18n-en="Paper">论文链接</a>
+            <a href="#" data-i18n-zh="代码" data-i18n-en="Code">代码</a>
+            <a href="#" data-i18n-zh="摘要" data-i18n-en="Abstract">摘要</a>
+          </div>
+        </li>
+        <li>
+          <div class="pub-title">ZhongYan Chen, et al. “（论文标题二）.”</div>
+          <div class="pub-meta">（期刊 / 会议名称）, 2025.</div>
+          <div class="pub-links">
+            <a href="#" data-i18n-zh="论文链接" data-i18n-en="Paper">论文链接</a>
+            <a href="#" data-i18n-zh="代码" data-i18n-en="Code">代码</a>
+          </div>
+        </li>
+        <li>
+          <div class="pub-title">（合作者）, ZhongYan Chen. “（论文标题三）.”</div>
+          <div class="pub-meta">（期刊 / 会议名称）, 2025.</div>
+          <div class="pub-links">
+            <a href="#" data-i18n-zh="论文链接" data-i18n-en="Paper">论文链接</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 教育与经历 ================= -->
+  <section class="section" id="cv">
+    <div class="wrap">
+      <h2><span data-i18n-zh="教育与经历" data-i18n-en="Experience">教育与经历</span><span class="en" data-i18n-zh="Experience" data-i18n-en="教育与经历">Experience</span></h2>
+      <div class="cols">
+        <div>
+          <h3 data-i18n-zh="教育经历" data-i18n-en="Education">教育经历</h3>
+          <ul class="timeline">
+            <li>
+              <div class="when">2023.09 – <span data-i18n-zh="至今" data-i18n-en="Present">至今</span></div>
+              <div class="what" data-i18n-zh="博士研究生 · （专业）" data-i18n-en="Ph.D. in (Major)">博士研究生 · （专业）</div>
+              <div class="where" data-i18n-zh="（学校名称）" data-i18n-en="(University)">（学校名称）</div>
+            </li>
+            <li>
+              <div class="when">2019.09 – 2023.06</div>
+              <div class="what" data-i18n-zh="工学学士 · （专业）" data-i18n-en="B.Eng. in (Major)">工学学士 · （专业）</div>
+              <div class="where" data-i18n-zh="（本科学校名称）" data-i18n-en="(University)">（本科学校名称）</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n-zh="荣誉与奖项" data-i18n-en="Honors &amp; Awards">荣誉与奖项</h3>
+          <ul class="timeline">
+            <li>
+              <div class="when">2025</div>
+              <div class="what" data-i18n-zh="（奖学金 / 奖项名称）" data-i18n-en="(Scholarship / Award)">（奖学金 / 奖项名称）</div>
+            </li>
+            <li>
+              <div class="when">2024</div>
+              <div class="what" data-i18n-zh="（竞赛 / 荣誉名称）" data-i18n-en="(Competition / Honor)">（竞赛 / 荣誉名称）</div>
+            </li>
+            <li>
+              <div class="when">2023</div>
+              <div class="what" data-i18n-zh="（优秀毕业生等）" data-i18n-en="(Outstanding Graduate, etc.)">（优秀毕业生等）</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 联系方式 ================= -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <h2><span data-i18n-zh="联系方式" data-i18n-en="Contact">联系方式</span><span class="en" data-i18n-zh="Contact" data-i18n-en="联系方式">Contact</span></h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="k" data-i18n-zh="邮箱" data-i18n-en="Email">邮箱</div>
+          <div class="v"><a href="mailto:your-email@example.com">your-email@example.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="k">GitHub</div>
+          <div class="v"><a href="https://github.com/zhongyanchen02" target="_blank" rel="noopener">@zhongyanchen02</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="k">Google Scholar</div>
+          <div class="v"><a href="https://scholar.google.com/" target="_blank" rel="noopener" data-i18n-zh="个人主页" data-i18n-en="Profile">个人主页</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="k" data-i18n-zh="地址" data-i18n-en="Address">地址</div>
+          <div class="v" data-i18n-zh="（学校 / 城市）" data-i18n-en="(University / City)">（学校 / 城市）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> ZhongYan Chen</span>
+    <span class="spacer"></span>
+    <span data-i18n-zh="最后更新：2026 年 9 月" data-i18n-en="Last updated: September 2026">最后更新：2026 年 9 月</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  /* ---- 年份 ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- 深色 / 浅色 ---- */
+  var themeBtn = document.getElementById('themeBtn');
+  function paintTheme() {
+    themeBtn.textContent = root.dataset.theme === 'dark' ? '☀' : '◐';
+  }
+  themeBtn.addEventListener('click', function () {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    paintTheme();
+  });
+  paintTheme();
+
+  /* ---- 中英文切换 ---- */
+  var langBtn = document.getElementById('langBtn');
+  function applyLang(lang) {
+    root.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('[data-i18n-zh]').forEach(function (el) {
+      var v = el.getAttribute('data-i18n-' + lang);
+      if (v !== null && v !== undefined) el.textContent = v;
+    });
+    langBtn.textContent = lang === 'zh' ? 'EN' : '中文';
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  langBtn.addEventListener('click', function () {
+    var next = (langBtn.textContent === 'EN') ? 'en' : 'zh';
+    applyLang(next);
+  });
+
+  var initial = 'zh';
+  try { initial = localStorage.getItem('lang') || 'zh'; } catch (e) {}
+  if (initial === 'en') applyLang('en');
+})();
+</script>
+</body>
+</html>
